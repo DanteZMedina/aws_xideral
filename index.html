@@ -17,7 +17,12 @@
     <header>
 
         <nav class="navbar">
+
             <h2 class="logo">Dante Medina</h2>
+
+            <button class="hamburger">
+                ☰
+            </button>
 
             <ul class="nav-links">
                 <li><a href="#descripcion">Descripción</a></li>
@@ -31,14 +36,14 @@
 
         <div class="hero">
 
-            <h1>Portafolio AWS Academy</h1>
+            <h1 class="hero-title">Portafolio AWS Academy</h1>
 
-            <p>
+            <p class="hero-subtitle">
                 Repositorio de prácticas, ejercicios y proyecto final
                 utilizando GitHub, Docker y AWS.
             </p>
 
-            <a href="#descripcion" class="btn">Explorar</a>
+            <a href="#descripcion" class="btn hero-btn" >Explorar</a>
 
         </div>
 
@@ -208,6 +213,20 @@
             el.classList.add("hidden")
 
             observer.observe(el)
+
+        })
+
+    </script>
+
+    <!-- Script para menu hamburguesa-->
+    <script>
+
+        const hamburger = document.querySelector(".hamburger")
+        const navLinks = document.querySelector(".nav-links")
+
+        hamburger.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active")
 
         })
 
