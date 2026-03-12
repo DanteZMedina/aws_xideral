@@ -43,7 +43,7 @@
                 utilizando GitHub, Docker y AWS.
             </p>
 
-            <a href="#descripcion" class="btn hero-btn" >Explorar</a>
+            <a href="#descripcion" class="btn hero-btn">Explorar</a>
 
         </div>
 
@@ -207,12 +207,29 @@
             })
 
         })
+        document.querySelectorAll(".timeline-item").forEach(el => {
+
+            observer.observe(el)
+
+        })
 
         document.querySelectorAll(".section, .card").forEach(el => {
 
             el.classList.add("hidden")
 
             observer.observe(el)
+
+        })
+
+        const navbar = document.querySelector(".navbar")
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled")
+            } else {
+                navbar.classList.remove("scrolled")
+            }
 
         })
 
@@ -230,7 +247,19 @@
 
         })
 
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active")
+
+            })
+
+        })
+
     </script>
+
+
 
 </body>
 

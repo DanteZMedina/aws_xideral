@@ -14,9 +14,19 @@ header{
 height:100vh;
 padding-top:80px;
 background:linear-gradient(135deg,#1f2937,#4f46e5);
+background-size:200% 200%;
+animation:gradientMove 8s ease infinite;
 color:white;
 display:flex;
 flex-direction:column;
+}
+
+@keyframes gradientMove{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
 }
 
 .navbar{
@@ -31,7 +41,16 @@ z-index:1000;
 
 background:rgba(255,255,255,0.1);
 backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
+
+border-bottom:1px solid rgba(255,255,255,0.15);
+
+transition:all .3s ease;
+}
+
+.navbar.scrolled{
+padding:10px 10%;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
 }
 
 
@@ -356,11 +375,21 @@ padding-left:30px;
 max-width:600px;
 margin-left:auto;
 margin-right:auto;
+position:relative;
 }
 
 .timeline-item{
 margin-bottom:40px;
 position:relative;
+
+opacity:0;
+transform:translateX(-30px);
+transition:all .6s ease;
+}
+
+.timeline-item.show{
+opacity:1;
+transform:translateX(0);
 }
 
 .timeline-item::before{
@@ -372,6 +401,8 @@ border-radius:50%;
 position:absolute;
 left:-39px;
 top:5px;
+
+box-shadow:0 0 0 6px rgba(79,70,229,.2);
 }
 
 .timeline-item h3{
