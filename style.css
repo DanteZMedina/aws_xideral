@@ -33,7 +33,7 @@ flex-direction:column;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 10%;
+padding:15px 10%;
 position:fixed;
 width:100%;
 top:0;
@@ -103,8 +103,30 @@ display:block;
 
 }
 /*********************************                                                  */
+.logo-img{
+height:40px;
+width:auto;
+display:block;
+}
+
+.logo-img{
+height:40px;
+transition:transform .25s ease;
+}
+
+.logo-img:hover{
+transform:scale(1.05);
+}
+
 .logo{
-font-weight:600;
+display:flex;
+align-items:center;
+}
+
+.logo img{
+height:65px;
+width:auto;
+filter: drop-shadow(0 0 3px rgba(255,255,255,0.4));
 }
 
 .nav-links{
@@ -117,8 +139,7 @@ list-style:none;
 color:white;
 text-decoration:none;
 font-size:14px;
-position:relative;
-transition:all .3s ease;
+transition:all .25s ease;
 }
 
 .nav-links a::after{
@@ -132,8 +153,9 @@ background:white;
 transition:width .3s ease;
 }
 
-.nav-links a:hover::after{
-width:100%;
+.nav-links a:hover{
+color:#c7d2fe;
+text-shadow:0 0 8px rgba(255,255,255,0.6);
 }
 
 .hero{
@@ -458,4 +480,9 @@ transition:transform .25s ease;
 
 .img-tarea:hover{
 transform:scale(1.05);
+}
+
+/**************************** ICONOS *********************************/
+.github-icon{
+filter:invert(1);
 }
